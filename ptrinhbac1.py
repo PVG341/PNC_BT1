@@ -1,3 +1,5 @@
+#Hồ Sỹ Phúc // 2274802010675
+
 import tkinter as tk
 from tkinter import messagebox
 
@@ -26,21 +28,21 @@ def giaiphuongtrinh_bac1():
 # Hàm thoát chương trình
 def exit_program():
     if messagebox.askyesno("Thoát", "Bạn có muốn thoát không?"):
-        root.quit()
+        win.quit()
 
 # Tạo cửa sổ chính
-root = tk.Tk()
-root.title("Giải Phương Trình Bậc 1")
+win = tk.Tk()
+win.title("Giải Phương Trình Bậc 1")
 
 # Tạo menu
-menu_bar = tk.Menu(root)
+menu_bar = tk.Menu(win)
 file_menu = tk.Menu(menu_bar, tearoff=0)
 file_menu.add_command(label="Exit", command=exit_program)
 menu_bar.add_cascade(label="File", menu=file_menu)
-root.config(menu=menu_bar)
+win.config(menu=menu_bar)
 
 # Tạo LabelFrame để nhập các giá trị a, b
-frame_input = tk.LabelFrame(root, text="Nhập các hệ số", padx=10, pady=10)
+frame_input = tk.LabelFrame(win, text="Nhập các hệ số", padx=10, pady=10)
 frame_input.pack(side=tk.LEFT, padx=10, pady=10)
 
 #Hệ phương trình
@@ -60,11 +62,11 @@ entry_b = tk.Entry(frame_input)
 entry_b.grid(row=2, column=1, padx=5, pady=5)
 
 # Tạo LabelFrame để hiển thị nút giải và kết quả
-frame_result = tk.LabelFrame(root, text="Kết quả", padx=10, pady=10)
+frame_result = tk.LabelFrame(win, text="Kết quả", padx=10, pady=10)
 frame_result.pack(side=tk.RIGHT, padx=10, pady=10)
 
 # Nút giải phương trình
-kq_btn = tk.Button(frame_result, text="Giải", command=giaiphuongtrinh_bac1)
+kq_btn = tk.Button(frame_result, text="Tính toán", command=giaiphuongtrinh_bac1)
 kq_btn.grid(row=0, column=0, padx=5, pady=5)
 
 # Label để hiển thị kết quả
@@ -72,4 +74,4 @@ kq_pt = tk.Label(frame_result, text="Kết quả sẽ hiển thị tại đây")
 kq_pt.grid(row=0, column=1, padx=5, pady=5)
 
 # Chạy chương trình
-root.mainloop()
+win.mainloop()
